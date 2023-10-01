@@ -4,13 +4,15 @@
 
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Barlow', sans-serif;
 }
-html , body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     /* background-color: black; */
@@ -19,21 +21,21 @@ html , body{
 :root {
     /* ## Colors */
 
-/* ### Primary */
+    /* ### Primary */
 
---Soft-red: hsl(7, 99%, 70%);
---Yellow: hsl(51, 100%, 49%);
---Dark-desaturated-cyan: hsl(167, 40%, 24%);
---Dark-blue-photography-text: hsl(198, 62%, 26%);
---Dark-moderate-cyan-footer: hsl(168, 34%, 41%);
+    --Soft-red: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Dark-desaturated-cyan: hsl(167, 40%, 24%);
+    --Dark-blue-photography-text: hsl(198, 62%, 26%);
+    --Dark-moderate-cyan-footer: hsl(168, 34%, 41%);
 
-/* ### Neutral */
+    /* ### Neutral */
 
---Very-dark-desaturated-blue: hsl(212, 27%, 19%);
---Very-dark-grayish-blue: hsl(213, 9%, 39%);
---Dark-grayish-blue: hsl(232, 10%, 55%);
---Grayish-blue: hsl(210, 4%, 67%);
---White: hsl(0, 0%, 100%);
+    --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --Dark-grayish-blue: hsl(232, 10%, 55%);
+    --Grayish-blue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
 }
 
 header {
@@ -42,6 +44,8 @@ header {
     background: url('images/desktop/image-header.jpg')no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
 
 nav {
@@ -58,6 +62,7 @@ nav ul {
     gap: 2rem;
     list-style: none;
     font-size: 14px;
+    position: relative;
 }
 
 nav ul a {
@@ -97,6 +102,16 @@ header .header h1 {
     text-transform: uppercase;
 }
 
+nav .menu-icon {
+    display: none;
+}
+
+
+
+
+
+
+
 
 
 
@@ -117,7 +132,7 @@ header .header h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 #section-1 .boxes .left-box div {
@@ -163,7 +178,7 @@ header .header h1 {
 }
 
 #section-1 .boxes .left-box a:hover::after {
-background: var(--Yellow);
+    background: var(--Yellow);
 }
 
 #section-1 .boxes .right-box {
@@ -175,10 +190,11 @@ background: var(--Yellow);
 #section-1 .boxes .right-box img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 #boxe2 a#second::after {
-background: hsl(348, 100%, 94%);
+    background: hsl(348, 100%, 94%);
 }
 
 #boxe2 a#second:hover::after {
@@ -190,12 +206,14 @@ background: hsl(348, 100%, 94%);
     align-items: center;
 }
 
-#boxe3 .right, .left {
+#boxe3 .right,
+.left {
     width: 100%;
     position: relative;
 }
 
-#boxe3 .right img, .left img {
+#boxe3 .right img,
+.left img {
     width: 100%;
 }
 
@@ -209,9 +227,9 @@ background: hsl(348, 100%, 94%);
 }
 
 #boxe3 .para p {
-line-height: 1.5;
-margin-top: 1.5rem;
-font-weight: 500;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    font-weight: 500;
 }
 
 #boxe3 .para h3 {
@@ -322,6 +340,7 @@ font-weight: 500;
 #section-3 img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 
@@ -368,6 +387,182 @@ footer a svg {
     transition: .2s ease-in-out;
 }
 
-footer a svg:hover  {
+footer a svg:hover {
     fill: var(--White);
-  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 899px) {
+    #section-1 #boxe1 {
+        /* flex-wrap: wrap; */
+        flex-direction: column-reverse;
+    }
+
+    #section-1 #boxe1 .left-box {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    #section-1 #boxe2 {
+        flex-direction: column;
+    }
+
+    #section-1 #boxe2 .left-box {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+        background: var(--White);
+        flex-direction: column;
+        top: 7rem;
+        width: 90%;
+        height: auto;
+        right: -100%;
+
+        padding: 4rem 0;
+
+        transition: .45s linear;
+    }
+
+    nav ul.active {
+        /* transform: translateX(-5%); */
+        right: 5%;
+    }
+
+    nav ul::after {
+        position: absolute;
+        content: '';
+        width: 2rem;
+        height: 3rem;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        background: var(--White);
+        right: 0;
+        top: -47px;
+    }
+
+    nav ul a {
+        color: var(--Very-dark-grayish-blue);
+        font-weight: 700;
+    }
+
+    nav ul .contact {
+        background: var(--Yellow);
+        color: #000;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* column-gap: 7.5rem; */
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+
+
+    .container .boxe {
+        /* background-color: red; */
+        width: 63%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 699px) {
+    #boxe3 .para {
+        position: absolute;
+        bottom: 1rem;
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    #boxe3 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #boxe3 .right,
+    .left {
+        width: 100%;
+        position: relative;
+        height: 100vh;
+        /* background: azure; */
+    }
+
+    #boxe3 .right img,
+    .left img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    header .header h1 {
+        font-size: 2.3rem;
+        font-family: 'Fraunces', serif;
+        color: var(--White);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    #section-3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #section-3 div {
+        width: 100%;
+        height: 100%;
+    }
+
+    #section-2 {
+        padding: 2rem;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 380px) {
+    #section-1 .boxes .right-box {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #section-2 {
+        padding: 1rem;
+    }
+
+    .container .boxe {
+        width: 100%;
+    }
+}
