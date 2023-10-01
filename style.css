@@ -104,6 +104,7 @@ header .header h1 {
 
 nav .menu-icon {
     display: none;
+    cursor: pointer;
 }
 
 
